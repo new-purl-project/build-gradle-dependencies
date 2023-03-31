@@ -13,6 +13,7 @@ jobs:
                   distribution: 'adopt'
                   cache: 'gradle'
             - run: sh ./gradlew dependencies > .debricked-gradle-dependencies.txt
+            - run: cat .debricked-gradle-dependencies.txt
             - uses: debricked/actions/scan@v1
               env:
                   DEBRICKED_TOKEN: ${{ secrets.DEBRICKED_TOKEN }}
